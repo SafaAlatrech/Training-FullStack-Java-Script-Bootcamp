@@ -1,0 +1,5 @@
+let name = "John"
+// using normal quotes
+console.log("Hello "+name+", how are you ?");
+// using ES6 template literals
+console.log(`Hello ${name}, how are you ?`);

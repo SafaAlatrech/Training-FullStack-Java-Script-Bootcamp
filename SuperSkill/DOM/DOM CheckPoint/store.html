@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping Cart</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="store.js" async></script>
+    </head>
+    <body>
+        <section class="container content-section">
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">TOP STYLE LINGERIE SATINÉ</span>
+                    <img class="shop-item-image" src="Images/2.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$180,00</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">HAUT SATINÉ CACHE-CŒUR</span>
+                    <img class="shop-item-image" src="Images/3.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$104,00</span>
+                        <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">TOP COURT STRUCTURÉ</span>
+                    <img class="shop-item-image" src="Images/5.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$199,00 </span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">CHEMISE OVERSIZE EN POPELINE</span>
+                    <img class="shop-item-image" src="Images/6.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$139,00</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        </section>
+    </body>
+</html>

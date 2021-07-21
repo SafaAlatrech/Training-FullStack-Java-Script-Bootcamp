@@ -1,0 +1,29 @@
+function gap(g, m, n){
+  var arrOfPrimes = [];
+  var result = [];
+  
+  for(var i = m; i < n; i++){
+    if(isPrime(i)){
+      arrOfPrimes.push(i);
+    }
+  }
+  var currentNum = arrOfPrimes[0];
+  for(var j = 1; j < arrOfPrimes.length; j++){
+    if(arrOfPrimes[j] - currentNum === g){
+      result.push(currentNum, arrOfPrimes[j]);
+      return result;
+    } else {
+      currentNum = arrOfPrimes[j];
+    }
+  }
+  return null;
+}
+
+function isPrime(num){
+  for(var i=2; i < num; i++){
+	 	if(num%i === 0){
+	   		return false;
+	 	}
+  }
+  return true;
+}

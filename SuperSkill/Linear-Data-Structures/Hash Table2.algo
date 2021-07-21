@@ -1,0 +1,27 @@
+ALGORITHM first_non_repeated_char
+VAR
+   htab : HASH_TABLE<CHAR,INTEGER>;
+   str : STRING[50];
+   i,count : INTEGER;
+   ch : CHAR;
+BEGIN
+   Read(str);
+// first we browse the string to define the count of each character
+   FOR i FROM 0 TO str.length -1 STEP 1  DO
+       IF (htab.lookup(str[i]) = TRUE) THEN
+           count := htab.get(str[i]);
+           htab.insert(str[i],count+1);
+       ELSE
+           htab.insert(str[i],1);
+       END_IF
+   END_FOR
+// Now we loop the hash table to extract the first unique character
+   FOR i FROM 0 TO str.length -1 STEP 1  DO
+       IF (htab.get(str[i]) = 1) THEN
+           ch := str[i];
+           BREAK;
+       END_IF
+   END_FOR
+
+   Write(ch);
+END

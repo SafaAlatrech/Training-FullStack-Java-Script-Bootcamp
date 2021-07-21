@@ -1,0 +1,14 @@
+const people = [{ name: 'Max' }, { name: 'Jack' }, { name: 'Marry' }]
+// JavaScript
+function findPerson(name) {
+ for (let i = 0; i < people.length; i++) {
+   let person = people[i]
+   if (person.name == name) {
+     return person
+   }
+ }
+}
+// ES6
+function findPerson(name) {
+ return people.find(person =>person.name == name)
+}

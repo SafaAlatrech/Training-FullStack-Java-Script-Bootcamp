@@ -1,0 +1,11 @@
+a : ARRAY_OF FLOAT[M][N];
+b : ARRAY_OF FLOAT[N][O];
+c : ARRAY_OF FLOAT[M][O];
+FOR i FROM 0 TO M-1 DO
+    FOR j FROM 0 TO O-1 DO
+        FOR k FROM 0 TO N-1 DO
+            // Compute dot product of row i and column j
+            c[i][j] := c[i][j] + a[i][k] *b[k][j];
+        END_FOR
+    END_FOR
+END_FOR

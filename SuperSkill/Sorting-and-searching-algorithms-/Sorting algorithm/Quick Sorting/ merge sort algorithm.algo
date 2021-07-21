@@ -1,0 +1,24 @@
+PROCEDURE merge_sort(VAR arr : ARRAY_OF INTEGER)
+VAR
+   i, m, mid, from, to, high, low : INTEGER;
+BEGIN
+   low := 0;
+   high := arr.length-1;
+   // divide the array into blocks of size m
+   // m ={1,2,4,8,16,...}
+   m := 1;
+   WHILE (m<= high - low) DO
+       // for m = 1; i={0,2,4,6,8,...}
+       // for m = 2; i={0,4,8,...}
+       // for m = 4; i={0,8,...}
+       //....
+       FOR i FROM low TO high-1 STEP 2*m  DO
+           from := i;
+           mid := i+m-1;
+           to := min(i+2*m-1,high);
+           merge(arr,from,mid,to);
+       END_FOR
+       m := 2*m;
+   END_WHILE
+  
+END

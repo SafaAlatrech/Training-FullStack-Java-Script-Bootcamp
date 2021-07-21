@@ -1,0 +1,4 @@
+function XO(str) {
+   let cadena=Array.from(str.toLowerCase());
+return cadena.filter(x=> x==='x').length == cadena.filter(x=> x==='o').length;  
+}

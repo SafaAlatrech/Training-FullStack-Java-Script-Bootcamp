@@ -1,0 +1,17 @@
+var nbrOfLaps = function (x, y) {
+  var a=gcd(x,y);
+  var b=y/a;
+  var c=x/a;
+  return [b, c];
+ }
+
+function gcd(a,b){
+  var temp;
+ if(a<b){temp=a;a=b;b=temp;}
+ while(b!=0){
+  temp=a%b;
+  a=b;
+    b=temp;    
+ }
+ return a;  
+}

@@ -1,0 +1,14 @@
+ALGORITHM delete_blank_begin
+VAR
+   str : STRING[] := "   GoMyCode";
+   i : INTEGER := 0;
+   j : INTEGER := 0;
+BEGIN
+   WHILE ( str[0]=' ') DO
+       j := 0;
+       WHILE (j < str.length) DO
+           str[j] := str[j+1]; // translation from right to left
+           j := j+1; // update index
+       END_WHILE
+   END_WHILE
+END

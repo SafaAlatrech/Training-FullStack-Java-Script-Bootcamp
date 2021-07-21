@@ -1,0 +1,5 @@
+for(var i = 0; i < 6; i++){
+ var myNumber = i;
+ console.log(myNumber); // 0, 1, 2, 3, 4, 5
+}
+console.log(myNumber); // 5 

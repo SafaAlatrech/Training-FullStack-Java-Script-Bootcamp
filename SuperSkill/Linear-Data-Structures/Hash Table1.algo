@@ -1,0 +1,45 @@
+ALGORITHM hash
+VAR
+   // declaring hash table
+   htab : HASH_TABLE<INTEGER,STRING>;
+   // HASH_TABLE<Key_type,Value_type>
+  
+BEGIN
+   htab : HASH_TABLE<INTEGER,STRING>;
+
+   htab.insert(0,"zero");
+   htab.insert(1,"one");
+   htab.insert(2,"two");
+   htab.insert(3,"three");
+   Write(htab);
+
+   htab.lookup(0); // TRUE
+   htab.lookup(5); // FALSE
+
+
+   htab.get(0); // "zero"
+
+   htab.delete(0);
+
+   // duplicate key
+   htab.insert(3,"three-a");
+   htab.insert(3,"three-b");
+
+   htab.get(3) // "three-b"
+   // there is no duplicated key (after the execution this
+   // instruction will delete the first value, and replace it the second)
+
+   // duplicate value
+   htab.insert(3,"three-a");
+   htab.insert(4,"three-a");
+
+   // hash function
+   HASH_TABLE<STRING,CHAR>
+   // this is the way to declare a hash function
+   // we'll see it more in the function course
+
+   FUNCTION hash_function(STRING str) : INTEGER
+   BEGIN
+       RETURN str.length;
+   END
+END

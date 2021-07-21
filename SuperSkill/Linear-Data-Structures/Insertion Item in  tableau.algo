@@ -1,0 +1,22 @@
+ALGORITHM insertion_array
+VAR
+   tab : ARRAY_OF INTEGER[5];
+   i,j, pos, elt : INTEGER;
+BEGIN
+   FOR i FROM 0 TO 3 DO
+       Read(tab[i]);// insert from user
+   END_FOR
+
+   Write("give the element to insert");
+   Read(elt);
+   Write("give the position to insert in array");
+   Read(pos);
+   j := tab.length;
+   WHILE (j >= pos) DO
+       tab[j+1] := tab[j]; // translation from left to right
+       j := j-1; // update index
+   END_WHILE
+
+   tab[pos] := elt;
+   // remember the tab.length is increased by 1.
+END

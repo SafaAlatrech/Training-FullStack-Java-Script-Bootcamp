@@ -1,0 +1,10 @@
+/------ lib.js ------
+export function square(x) {
+  return x * x;
+}
+export const sum = (x) => {
+  return x + x;
+}
+//------ main.js ------
+import { square, sum } from 'lib' ;
+import * as library from 'lib' // this means import every exported module in lib and use the alias library

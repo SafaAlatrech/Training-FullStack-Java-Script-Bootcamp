@@ -1,0 +1,6 @@
+let { address } = {address:{city:"New York", country:"USA"}};
+
+let {city, country} = address;
+
+console.log(city) // New York
+console.log(country) // USA

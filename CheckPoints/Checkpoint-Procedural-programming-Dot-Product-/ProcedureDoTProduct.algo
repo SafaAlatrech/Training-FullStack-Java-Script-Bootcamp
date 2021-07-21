@@ -1,0 +1,24 @@
+PROCEDURE dotProduct(vect1 ,vect2: array_name : ARRAY_OF float[];)
+VAR
+   i,j =INTEGER;
+   ps = FLOAT;
+BEGIN
+    FOR i FROM 0 TO length-1 STEP 1 DO
+
+      ps:= ps + vect1[i]*vect2[j]
+        
+    END_FOR
+END
+ALGORITHM ProductDot
+VAR
+ vect1, vec2: ARRAY_OF float 
+BEGIN
+
+    FOR i FROM 0 TO vect1.length-1 STEP 1 DO
+    FOR j FROM 0 TO vect2.length-1 STEP 1  DO
+        IF (dotProduct(vect1[i], vect2[j]) === 0) THEN
+         print({vect1[i]} ,'and', {vect2[j]} ,'are orthogonal')
+        END_IF
+    END_FOR
+    END_FOR
+END

@@ -1,0 +1,10 @@
+let object1 = { firstName: 'John', lastName: 'Brown' }
+let object2 = { age: 25 }
+
+let newObject1 = { ...object1, ...object2 }
+console.log(newObject1)
+/* {
+firstName:"John",
+lastName:"Brown",
+age:25
+}*/

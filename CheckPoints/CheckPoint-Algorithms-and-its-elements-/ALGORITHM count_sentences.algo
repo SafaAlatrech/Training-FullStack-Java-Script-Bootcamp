@@ -1,0 +1,28 @@
+ALGORITHM count_sentences
+VAR
+    i : INTEGER;
+    count_word : INTEGER;
+    count_v : INTEGER;
+    bla :string;
+    c : CHAR;
+    counter :0;
+BEGIN
+ bla :='My name is Alatrech Safa'
+ 
+ WHILE (c in bla =='.') DO
+ counter :=counter+1
+ END_WHILE
+
+FOR i FROM 0 TO length(bla) 
+ IF ((bla[i] =='')  and ((bla[i+1] <>'')) )THEN
+     count_word += 1
+ END_IF (bla[i] in  ("a","e","i","o","u","y")) DO
+ count_v =count_v+1
+END
+count_word = count_word +1
+ print (lenth of the given string: "+ str(counter)")
+ print (total  of the number word: "+ str(count_word)")
+ print (Total of the number voyell: "+ str(count_v)")
+
+
+

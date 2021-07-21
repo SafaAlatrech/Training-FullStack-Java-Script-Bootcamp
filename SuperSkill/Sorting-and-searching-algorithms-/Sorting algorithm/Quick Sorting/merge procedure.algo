@@ -1,0 +1,70 @@
+PROCEDURE merge(VAR arr : ARRAY_OF INTEGER, left, mid, right : INTEGER)
+VAR
+   i,j,k : INTEGER;
+   n1 : INTEGER := mid - left + 1;
+   n2 : INTEGER := right - mid;
+   L : ARRAY_OF INTEGER[n1];
+   R : ARRAY_OF INTEGER[n2];
+BEGIN
+   // copy data to temp arrays L[] and R[]
+  FOR i FROM 0 TO n1-1   DO
+      L[i] := arr[left+i];
+  END_FOR
+  FOR j FROM 0 TO n2-1 DO
+      R[j] := arr[mid+1+j];
+  END_FOR
+  // Merge the temp arrays back into arr[left .. right]
+  i := 0;
+  j := 0;
+  k := left;
+  WHILE (i<n1 AND j<n2) DO
+      IF (L[i] <= R[j]) THEN
+          arr[k] := L[i];
+          i := i+1;
+       ELSE
+          arr[k] := R[j];
+          j := j+1;       
+      END_IF
+      k := k+1;
+  END_WHILE
+  /* Copy the remaining elements of R[], if there are any */
+  WHILE (j < n2) DO
+      arr[k] := R[j];
+      j := j+1;
+      k := k+1;
+  END_WHILE
+END
+This is the quick sort algorithm:
+
+/*
+arr -> Array to be sorted
+l-> starting index
+h-> ending index
+*/
+
+PROCEDURE quick_sort(VAR arr : ARRAY_OF INTEGER)
+VAR
+  // Create an auxiliary stack
+  stack : STACK;
+  p : INTEGER;
+BEGIN
+   // pushing initial values of l and h to stack
+   stack.push(l);
+   stack.push(h);
+   // keep popping from the stack while is not empty
+   WHILE (NOT stack.isEmpty()) DO
+       // pop h and l
+       h := stack.pop();
+       l := stack.pop();
+       // set pivot element at its correct position
+       // in a sorted array
+       p := partition(arr,l,h);
+       // if there are elements on the right side of the pivot,
+       // then push right side to stack
+       IF (p+1 < h) THEN
+           stack.push(p+1);
+           stack.push(h);
+       END_IF
+   END_WHILE
+
+END

@@ -1,0 +1,4 @@
+et student = { address: { city: 'New York', country: 'USA' } }
+
+console.log(student.address.city) // New York
+console.log(student.address.country) // USA

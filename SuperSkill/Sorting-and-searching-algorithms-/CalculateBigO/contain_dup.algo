@@ -1,0 +1,13 @@
+FUNCTION contain_dup(tab : ARRAY_OF INTEGER) : BOOLEAN
+VAR
+  i,j : INTEGER;
+BEGIN
+  FOR i FROM 0 TO tab.length-1 STEP 1  DO
+       FOR j FROM 0 TO tab.length-1 STEP 1  DO
+           IF (i<>j AND tab[i] = tab[j]) THEN
+               RETURN TRUE
+           END_IF
+       END_FOR
+  END_FOR
+   RETURN FALSE ;
+END

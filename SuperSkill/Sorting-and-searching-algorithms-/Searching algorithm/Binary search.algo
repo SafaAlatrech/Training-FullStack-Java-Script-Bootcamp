@@ -1,0 +1,23 @@
+FUNCTION binary_search(arr : ARRAY_OF INTEGER) : INTEGER
+VAR
+   left, right, mid : INTEGER;
+BEGIN
+   left := 0;
+   right := arr.length-1;
+   WHILE (left < right) DO
+       mid := left + (right - left)/2;
+       // check if x is present in the mid
+       IF (arr[mid] = x) THEN
+           RETURN mid;
+       END_IF
+       // if x grater, ignore the left half
+       IF (arr[mid] < x) THEN
+           left := mid+1;
+       ELSE
+       // if x is smaller, ignore the right half
+       right := mid-1;
+       END_IF
+   END_WHILE
+   // if we reached here then the element is not present
+   RETURN -1  ;
+END

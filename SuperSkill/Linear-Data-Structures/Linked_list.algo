@@ -1,0 +1,26 @@
+ALGORITHM create_linked_list
+VAR
+   List:   STRUCT
+               data : CHAR; // here we define the data type of our list
+               next :  List; // here we define the pointer to next element
+           END_STRUCT
+   first : ^List := NULL; // here we define the first pointer which is
+   //initialized to null, meaning it's an empty pointer
+   p : ^List := NULL;
+   c   : CHAR;
+   i :INTEGER :=0;
+BEGIN
+   WHILE (i<3) DO
+       // read a character to add to list
+       Read(c);
+       // create() is to allocate memory and create a node
+       // free() is to delete a pointer
+       p := create(List);
+       // insert data in the node
+       p^.data := c;
+       // link first to p inserting in the head of the list
+       p^.next := first;
+       first := p;
+       i := i+1;
+   END_WHILE
+END

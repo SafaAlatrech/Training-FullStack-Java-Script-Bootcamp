@@ -1,0 +1,33 @@
+ALGORITHM solution2
+VAR
+    HASH_TABLE<INTEGER,INTEGER>
+    set1 : ARRAY_OF integer [10];
+    set2 :ARRAY_OF integer[15];
+    sum: INTEGER ;
+BEGIN
+   sum:=0  ;
+    htab: <INTEGER,INTEGER>;
+    FOR i FROM 0 TO set1.length-1 STEP 1  DO
+    htab.insert(set1[i],1);
+    END_FOR
+
+    FOR j FROM 0 TO set2.length-1 STEP 1  DO
+    IF (set1[i]  lookup set2.[j] = true) THEN
+     htab.get(set1[i],1)
+     Else
+     hteb.insert(set1[i],2)
+    END_IF
+    END_FOR
+    FOR i FROM 0 TO set1.length-1 STEP 1 DO
+      if (htab.lookup (set1[i]) =2)
+
+          sum:= sum+set1[i]
+    END_FOR
+    FOR j FROM 0 TO set2.length-1 STEP 1 DO
+      if (htab.lookup (set2[j]) =2)
+
+          sum:= sum+set2[j]
+    END_FOR
+    sum=sum*2
+       write (sum)
+       end 

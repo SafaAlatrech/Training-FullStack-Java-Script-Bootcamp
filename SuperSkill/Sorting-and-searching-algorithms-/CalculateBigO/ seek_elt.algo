@@ -1,0 +1,11 @@
+FUNCTION seek_elt(tab : ARRAY_OF INTEGER , val : INTEGER) : BOOLEAN
+VAR
+   i : INTEGER;
+BEGIN
+  FOR i FROM 0 TO tab.length-1 STEP 1  DO
+      IF (val = tab[i]) THEN
+          RETURN TRUE
+      END_IF
+  END_FOR
+  RETURN FALSE
+END 

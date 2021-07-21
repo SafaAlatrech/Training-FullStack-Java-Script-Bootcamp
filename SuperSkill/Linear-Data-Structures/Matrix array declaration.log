@@ -1,0 +1,6 @@
+m : ARRAY_OF INTEGER[M][N];
+FOR i FROM 0 TO M-1 DO
+    FOR j FROM 0 TO N-1 DO
+        m[i][j] :=0;
+    END_FOR
+END_FOR

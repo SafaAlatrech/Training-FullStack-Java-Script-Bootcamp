@@ -1,0 +1,5 @@
+//------ myFunc.js ------
+export default function funcName () { ... };
+
+//------ main.js ------
+import myFunc from 'myFunc';

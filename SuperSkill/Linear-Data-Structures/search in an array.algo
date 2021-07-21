@@ -1,0 +1,28 @@
+LGORITHM search_array
+VAR
+   tab : ARRAY_OF INTEGER[5];
+   i,j, pos, elt : INTEGER;
+BEGIN
+   FOR i FROM 0 TO 4 DO
+       Read(tab[i]);// insert from user
+   END_FOR
+
+   Write("give the element to search of");
+   Read(elt);
+
+   j := 0;
+   WHILE (j < tab.length) DO
+       IF (tab[j] = elt) THEN
+           BREAK; // element is found let break the loop
+       END_IF
+       j := j+1; // update index
+   END_WHILE
+
+   IF (j = tab.length) THEN  // we reached the end of array without finding the element
+       pos := -1; // -1 means we don't find the element.
+   ELSE
+       pos := j;
+   END_IF
+
+   Write("The position of the element is ", pos);
+END

@@ -1,0 +1,11 @@
+// JavaScript (ES5)
+function multiply() { return 2 * 3; };
+// ES6
+const multiply= () => { return 2 * 3 }; 
+
+// JavaScript (ES5)
+function multiplyBy2(a) { return 2 * a; };
+// ES6
+const multiplyBy2 = a => 2 * a ;
+
+

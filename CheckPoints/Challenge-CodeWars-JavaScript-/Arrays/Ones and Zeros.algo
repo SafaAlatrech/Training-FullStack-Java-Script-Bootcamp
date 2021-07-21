@@ -1,0 +1,1 @@
+const binaryArrayToNumber = array => parseInt(array.join(''), 2)

@@ -1,0 +1,28 @@
+ALGORITHM compare_ignore_two_strings
+VAR
+   str1, str2, : STRING[50];
+   i : INTEGER;
+BEGIN
+   Write("Give the first string to compare");
+   Read(str1);
+   Write("Give the second string to compare");
+   Read(str2);
+
+   IF (str1.length <> str2.length) THEN
+       Write("The Strings are not equals");
+   ELSE
+       str1 := ToUpper(str1); // this function will convert the character into uppercase
+       str2 := ToUpper(str2);
+       FOR i FROM 0 TO str1.length-1 STEP 1 DO
+           IF (str1[i]<>str2[2]) THEN
+               BREAK;
+           END_IF
+       END_FOR
+       IF (i = str1.length-1) THEN
+           Write("The Strings are equals");
+       ELSE
+           Write("The Strings are not equals");
+       END_IF
+   END_IF
+  
+END

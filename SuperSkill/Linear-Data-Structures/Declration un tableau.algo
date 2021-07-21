@@ -1,0 +1,18 @@
+ALGORITHM traverse_array
+VAR
+   tab : ARRAY_OF INTEGER[5]; // declaring the array and define its length.
+   i : INTEGER; // declaring the index for each element in the array.
+BEGIN
+  tab := {1,2,3,5,7,8}; // inserting the elements directly in the array.
+  Write('Print Array :')
+  FOR i FROM 0 TO 4 STEP 1  DO   // the index of arrays start from 0;
+     Write(tab[i]) // to access the element, we use the name_array[indexation]
+  END_FOR
+
+// another version
+   FOR i FROM 0 TO tab.length-1 STEP 1  DO
+   // here we can replace the static
+   //number in the max field using the `.length` property
+       Write(tab[i])
+   END_FOR
+END

@@ -1,0 +1,63 @@
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+nav li {
+  float: left
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+nav li a:hover {
+  background-color: #111;
+} 
+ body {
+    font-family: 'Roboto';font-size: 22px;
+    background-color: lightblue;
+    text-align: center;  
+}
+
+#home h3,p  {
+  text-align: center;  
+
+}
+#home img  {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+
+}
+
+#about h1,p { 
+  text-align: center;  
+}
+
+#work li {
+  text-align: center;  
+  border: 1px solid black;
+  padding: 25px;
+  background-color: lightblue;
+}
+#contact form {
+  text-align: center;  
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+#footer p  {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: #111;
+}

@@ -1,0 +1,16 @@
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    let min = Infinity;
+    for (let x=0; x<args.length ; x++) {
+      
+      if (args[x] < min ) {
+        min = args[x];
+        
+      }
+      
+    }
+    
+    return min;
+    
+  }
+}

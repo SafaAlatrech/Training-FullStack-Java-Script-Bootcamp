@@ -1,0 +1,27 @@
+ALGORITHM compare_two_strings
+VAR
+   str1, str2, : STRING[50];
+   i : INTEGER;
+BEGIN
+   Write("Give the first string to compare");
+   Read(str1);
+   Write("Give the second string to compare");
+   Read(str2);
+
+   IF (str1.length <> str2.length) THEN
+   // if the length of the two string is different we can make sure that they are not equal
+       Write("The Strings are not equals");
+   ELSE
+       FOR i FROM 0 TO str1.length-1 STEP 1 DO
+           IF (str1[i]<>str2[i]) THEN
+               BREAK;// we break if in the same position the caracters of two strings are different
+           END_IF
+       END_FOR
+       IF (i = str1.length) THEN
+           Write("The Strings are equals");
+       ELSE
+           Write("The Strings are not equals");
+       END_IF
+   END_IF
+  
+END 

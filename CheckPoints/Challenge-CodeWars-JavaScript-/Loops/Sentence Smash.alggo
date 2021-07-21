@@ -1,0 +1,13 @@
+function smash (words) {
+   
+    
+   return words.join(" ");
+    
+    
+};
+
+var ans = smash(['hello', 'world', 'this', 'is', 'great']);
+console.log(ans);
+
+var ans1 = smash(['hello', 'world']);
+console.log(ans1);

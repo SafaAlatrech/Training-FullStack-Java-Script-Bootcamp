@@ -1,0 +1,7 @@
+let student = { address: { city: 'New York', country: 'USA' } }
+
+let city = student.address.city
+let country = student.address.country
+
+console.log(city) // New York
+console.log(country) // USA

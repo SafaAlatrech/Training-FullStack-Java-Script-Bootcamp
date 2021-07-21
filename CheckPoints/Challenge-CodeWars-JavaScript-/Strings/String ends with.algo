@@ -1,0 +1,16 @@
+
+Solution One : 
+function solution(str, ending){
+  return new RegExp(ending+"$", "i").test(str);
+}
+
+Solution Two : 
+function solution(str, ending){
+   return str.slice(-ending.length) == ending ? true: false;
+}
+
+Solution Three : 
+
+function solution(str, ending){ 
+   return str.endsWith(ending); 
+}

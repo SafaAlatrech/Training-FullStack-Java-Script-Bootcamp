@@ -1,0 +1,57 @@
+/*
+arr -> Array to be sorted
+l-> starting index
+h-> ending index
+*/
+
+PROCEDURE quick_sort(VAR arr : ARRAY_OF INTEGER)
+VAR
+  // Create an auxiliary stack
+  stack : STACK;
+  p : INTEGER;
+BEGIN
+   // pushing initial values of l and h to stack
+   stack.push(l);
+   stack.push(h);
+   // keep popping from the stack while is not empty
+   WHILE (NOT stack.isEmpty()) DO
+       // pop h and l
+       h := stack.pop();
+       l := stack.pop();
+       // set pivot element at its correct position
+       // in a sorted array
+       p := partition(arr,l,h);
+       // if there are elements on the right side of the pivot,
+       // then push right side to stack
+       IF (p+1 < h) THEN
+           stack.push(p+1);
+           stack.push(h);
+       END_IF
+   END_WHILE
+
+   /*
+This function takes the last element as a pivot,
+places its element at its correct position in sorted
+array, and places all smaller (than the pivot) to left
+of pivot and all the greater elements to right of pivot
+*/
+
+FUNCTION partition(arr : ARRAY_OF INTEGER, low, high : INTEGER) : INTEGER 
+VAR
+   b,i,pivot : INTEGER;
+BEGIN
+  pivot := arr[high]; //pivot
+  i := low-1; // index of smaller element
+  FOR i FROM low TO high-1 DO
+       // if the current element is smaller than the pivot
+       IF (arr[i] < pivot) THEN
+           i := i+1;
+           swap(arr[i],arr[i])
+       END_IF
+  END_FOR
+   swap(arr[b+1],arr[i])
+
+   RETURN b+1 ;
+END
+
+END

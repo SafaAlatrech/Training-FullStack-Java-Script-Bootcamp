@@ -1,0 +1,16 @@
+ALGORITHM inverse_stack
+VAR
+   stk : STACK;
+   qu  : QUEUE;
+BEGIN
+   // fill the stack
+
+   WHILE (NOT stk.isEmpty()) DO
+       qu.enqueue(stk.pop());
+   END_WHILE
+
+   WHILE (NOT qu.isEmpty()) DO
+       stk.push(qu.dequeue());
+   END_WHILE
+
+END

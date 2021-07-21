@@ -1,0 +1,38 @@
+ALGORITHM solution1
+VAR
+
+ A: ARRAY_OF INTEGER[4];   
+ B: ARRAY_OF INTEGER[7];
+ i,j,sum:INTEGER;
+BEGIN
+sum:=0;
+count:=0
+FOR i from 0  TO A.length-1 step 1  DO
+WHILE (A[i]=B[count] and count<= B.length-1) DO
+   
+    sum:=sum +A[i]
+    
+END_WHILE
+
+    IF (count=B.length-1) THEN
+
+ count+=1
+        
+    Else
+
+ FOR i from 0  TO B.length-1 step 1  DO
+WHILE (B[count]=A[i] and count<= A.length-1) DO
+    
+        sum:=sum +B[count]
+   
+END_WHILE
+
+    IF (count=A.length-1) THEN
+     count+=1
+
+    END_IF
+ END_IF
+   sum:= sum*2
+END_FOR
+print('la somme des elements distincts de deux sets est',sum)
+END

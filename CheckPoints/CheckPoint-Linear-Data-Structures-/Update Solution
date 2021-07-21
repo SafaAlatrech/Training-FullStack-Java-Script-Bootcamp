@@ -1,0 +1,147 @@
+ALGORITHM sum_distinct elements
+VAR 
+    sum,i,j:INTEGER:=0;
+    tab1,tab2 : ARRAY_OF INTEGER[];
+
+BEGIN
+ Read(tab1)
+ Read(tab2)
+FOR i FROM 0 TO tab1.length-1 DO
+ j:=0;
+   WHILE ((j <= tab2.length-1) and (tab1[i]<>tab2[j])) DO
+           j := j+1;
+   END_WHILE
+   IF (j = tab2.length) THEN
+      sum := sum + tab1[i];
+   END_IF
+END_FOR
+FOR i FROM 0 TO tab2.length-1 DO
+ j:=0;
+   WHILE (j <= tab1.length-1 and tab2[i]<>tab1[j]) DO
+        j := j+1;
+   END_WHILE
+   IF (j = tab1.length) THEN
+      sum := sum + tab2[i];
+   END_IF
+END_FOR
+ Write ("Sum of all distinct elements:",sum)
+END
+solution 2
+ALGORITHM sum_distinct elements_sol2
+VAR 
+    sum,i,j,count:INTEGER:=0;
+    tab1,tab2 : ARRAY_OF INTEGER[];
+     htab : HASH_TABLE<INTEGER,INTEGER>;
+BEGIN
+ Read(tab1)
+ Read(tab2)
+FOR i FROM 0 TO tab1.length-1 DO
+    htab.insert(tab1[i],1);
+END_FOR
+FOR j FROM 0 TO tab2.length-1 DO
+   IF (htab.lookup(tab2[j]) =TRUE) THEN
+     count:=htab.get(tab2[j]);
+    htab.insert(tab2[j],count+1);
+   ELSE
+     htab.insert(tab2[j],1);
+    END_IF
+END_FOR
+FOR i FROM 0 TO tab1.length-1 DO
+     IF (htab.get(tab1[i]) = 1) THEN
+           sum := sum + tab1[i];
+           BREAK;
+       END_IF
+END_FOR
+FOR j FROM 0 TO tab2.length-1 DO
+   IF (htab.get(tab2[j]) = 1) THEN
+           sum := sum + tab2[j];
+           BREAK;
+    END_IF
+END_FOR
+ Write ("Sum of all distinct elements:",sum)
+END
+problem 2
+solution 1
+ALGORITHM Sum_overlapping elements
+VAR 
+    sum:INTEGER:=0;
+    tab1,tab2 : ARRAY_OF INTEGER[];
+
+BEGIN
+ Read(tab1)
+ Read(tab2)
+FOR i FROM 0 TO tab1.length-1 DO
+    FOR j FROM 0 TO tab2.length-1 DO
+        IF (tab1[i]=tab2[j])THEN
+            sum := sum + tab1[i]2;
+        END_IF
+    END_FOR
+END_FOR
+ Write ("Sum of overlapping elements:",sum)
+END
+ALGORITHM sum_overlapping elements_sol2
+VAR 
+    sum,i,j:INTEGER:=0;
+    tab1,tab2 : ARRAY_OF INTEGER[];
+     htab : HASH_TABLE<INTEGER,INTEGER>;
+
+BEGIN
+ Read(tab1)
+ Read(tab2)
+FOR i FROM 0 TO tab1.length-1 DO
+    htab.insert(tab1[i],1);
+END_FOR
+FOR j FROM 0 TO tab2.length-1 DO
+   IF (htab.lookup(tab2[j]) =TRUE) THEN
+    sum := sum + tab2[j]2;
+    END_IF
+END_FOR
+ Write ("Sum of overlapping elements:",sum)
+END
+correction dot product
+// Description of Procedure:
+PROCEDURE dot_product(VAR v1:ARRAY_OF INTEGER , VAR v2:ARRAY_OF INTEGER , VAR ps:INTEGER)
+VAR
+        i, ps:INTEGER;
+BEGIN
+    IF (v1.length <> v2.length) THEN
+        Write(" Can't find dot product, vectors have different length ");
+    ELSE
+        ps := 0;
+        FOR i FROM 0 TO v1.length STEP 1  DO
+        ps := ps + v1[i] * v2[i] ;
+        END_FOR
+    END_IF
+    Write(ps);
+END
+
+ALGORITHM dot_product_algo
+VAR
+    V1 , V2 : ARRAY_OF INTEGER[50];
+    i,n,m : INTEGER; 
+BEGIN
+   // Read the size
+    Write('The size of the arrays :joy:
+    Read(m);
+    Read(n);
+   // Read elements
+    Write('write two arrays :joy:
+    Write('V1 :joy:
+    FOR i FROM 0 TO m-1 STEP 1  DO
+        Read(V1[i]);
+    END_FOR
+    Write('V2:')
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        Read(V2[i]);
+    END_FOR
+    dot_product( V1 , V2 );
+
+    FOR i FROM 0 TO V1.length STEP 1  DO
+        FOR i FROM 0 TO V2.length STEP 1  DO
+            IF (dot_product(V1 , V2) === 0) THEN
+                Write('These vectors are orthogonal');
+            END_IF
+        END_FOR
+    END_FOR
+
+END

@@ -1,0 +1,3 @@
+const numberOfHoursInADay = 24;
+// NOT ALLOWED TO DO THIS
+numberOfHoursInADay = 25; // TypeError is raised

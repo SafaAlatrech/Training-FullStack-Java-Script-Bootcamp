@@ -1,0 +1,14 @@
+FUNCTION linear_search(tab : ARRAY_OF INTEGER, elt : INTEGER) : INTEGER
+VAR
+  j : INTEGER;
+BEGIN
+   j := 0;
+   WHILE (j< tab.length) DO
+      IF (tab[j] = elt) THEN
+          RETURN j; // element is found let's break the loop and return the index
+      END_IF
+      j := j+1; // update the index
+   END_WHILE
+   // we reached the end of array without finding the element
+   RETURN -1 ;// means that we did not find the element
+END
